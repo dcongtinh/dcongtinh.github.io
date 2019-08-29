@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Đăng ký</title>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Đăng ký tài khoản mới</h3>
+            <p>
+                Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản mới
+            </p>
+            <form class="form-wrapper">
+                <table>
+                    <tr>
+                        <th>Tên đăng nhập</th>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mật khẩu</th>
+                        <td>
+                            <input type="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Gõ lại mật khẩu</th>
+                        <td>
+                            <input type="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Hình đại diện</th>
+                        <td>
+                            <input id="file" type="file" name="file" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Giớ tính</th>
+                        <td>
+                            <input type="radio" name="sex" value="0" />Nam
+                            <input type="radio" name="sex" value="1" />Nữ
+                            <input type="radio" name="sex" value="2" />Khác
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Nghề nghiệp</th>
+                        <td>
+                            <select name="job">
+                                <option value="0">Học sinh</option>
+                                <option value="1">Sinh viên</option>
+                                <option value="2">Giáo viên</option>
+                                <option value="3">Khác</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sở thích</th>
+                        <td>
+                            <input type="checkbox" name="fav_0" value="0" />Thể
+                            thao
+                            <input type="checkbox" name="fav_1" value="1" />Du
+                            lịch
+                            <input type="checkbox" name="fav_2" value="2" />Âm
+                            nhạc
+                            <input type="checkbox" name="fav_3" value="3" />Thời
+                            trang
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input type="submit" value="Đăng ký" />
+                            <input type="reset" value="Làm lại" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <p>Đào Công Tính - B1709632 - Sáng 5</p>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+.container {
+    border: 1px solid black;
+    margin: 24px;
+}
+table .avatar {
+    border-radius: 60px;
+}
+.overview {
+    display: flex;
+    margin: 24px;
+    justify-content: center;
+}
+.overview td {
+    padding-left: 24px;
+}
