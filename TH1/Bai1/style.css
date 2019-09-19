@@ -1,0 +1,19 @@
+th {
+    background-color: aqua;
+}
+
+td {
+    background-color: wheat;
+}
+
+td:hover {
+    background-color: crimson;
+}
+
+table .data {
+    background-color: pink;
+}
+
+table .data:hover {
+    background-color: yellowgreen;
+}

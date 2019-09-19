@@ -1,0 +1,90 @@
+body {
+    background-color: gray;
+    margin: 0 80px;
+}
+
+#wrap {
+    padding: 8px;
+    background-color: #3B7565;
+    min-width: 300px;
+}
+
+#title {
+    background-image: url('./banner.jpg');
+    background-size: cover;
+    height: 150px;
+}
+
+#title h1 {
+    color: yellow;
+    font-family: cursive;
+    margin: 0;
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#menu ul li ul {
+    display: none;
+    position: absolute;
+}
+
+#menu ul li {
+    float: left;
+    width: 25%;
+    background-color: black;
+}
+
+#menu ul li:hover {
+    background-color: rgb(0, 0, 0, .8);
+}
+
+#menu ul li ul li {
+    display: block;
+    width: 100%;
+    background-color: black;
+}
+
+#menu ul a {
+    padding: 2px 0;
+    text-decoration: none;
+    display: block;
+    border: 1px dotted yellow;
+    color: yellow;
+    text-align: center;
+}
+
+#menu ul li:hover ul {
+    display: block;
+}
+
+#content {
+    padding-left: 10px;
+}
+
+#content h4 {
+    margin: 0;
+    margin-top: 10px;
+    color: yellow;
+    border-bottom: 1px dotted;
+    display: inline-block;
+}
+#content p {
+    margin: 0;
+    line-height: 1.5;
+}
+#content li a {
+    color: white;
+}
+#footer {
+    border-top: 1px dotted;
+    text-align: center;
+    clear: both;
+}
