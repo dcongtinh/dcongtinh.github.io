@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+td {
+    padding-left: 50px;
+}
+th {
+    vertical-align: baseline;
+    text-align: right;
+}
+
+.container {
+    padding: 24px;
+    margin: 0 auto;
+    border: 1px solid;
+    width: 300px;
+    margin-top: 50px;
+}
+.error {
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+    margin: 2px;
+    height: 18px;
+}

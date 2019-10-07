@@ -1,0 +1,16 @@
+.profile {
+    border: 1px solid red;
+    width: 500px;
+    margin: 0 auto;
+}
+.profile table {
+    width: 100%;
+    margin: 4px;
+}
+.profile .hello {
+    border-bottom: 1px dotted red;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    color: red;
+}

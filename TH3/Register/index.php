@@ -1,3 +1,21 @@
+<?php
+include '../../session_start.php';
+if (isset($_SESSION['tendangnhap'])) {
+    header("Location: ../Profile");
+}
+
+function set_error($param)
+{
+    $error = $_SESSION['error_' . $param];
+    if (isset($_SESSION['error_' . $param])) {
+        echo "<p class='error'>$error</p>";
+        unset($_SESSION['error_' . $param]);
+        return;
+    }
+    echo '';
+    return;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,18 +39,21 @@
                     <th>Tên đăng nhập</th>
                     <td>
                         <input type="text" name="tendangnhap" />
+                        <?php set_error('tendangnhap') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Mật khẩu</th>
                     <td>
                         <input type="password" name="matkhau" />
+                        <?php set_error('matkhau') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Gõ lại mật khẩu</th>
                     <td>
                         <input type="password" name="matkhau2" />
+                        <?php set_error('matkhau2') ?>
                     </td>
                 </tr>
                 <tr>
@@ -78,8 +99,15 @@
                 </tr>
             </table>
         </form>
+        <p class="error">
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "* " . $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+            ?>
+        </p>
     </div>
-    <p>Đào Công Tính - B1709632 - Sáng 5</p>
 </body>
 
 </html>
