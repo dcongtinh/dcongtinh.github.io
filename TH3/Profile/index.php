@@ -21,7 +21,7 @@ if (!isset($_SESSION['tendangnhap'])) {
         <form method="POST" action="signout.php">
             <table>
                 <tr>
-                    <td rowspan="5"><img src="../../img/avatar.jpg" alt="" width="150" height="150"></td>
+                    <td rowspan="6"><img src="../../img/avatar.jpg" alt="" width="150" height="150"></td>
                     <td>Nickname: <?php echo $_SESSION['tendangnhap'] ?></td>
                 </tr>
                 <tr>
@@ -32,6 +32,15 @@ if (!isset($_SESSION['tendangnhap'])) {
                 </tr>
                 <tr>
                     <td>Sở thích: <?php echo $_SESSION['sothich'] ?></td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="../List_Product">Danh sách sản phẩm</a></li>
+                            <li><a href="../Add_Product">Thêm sản phẩm</a></li>
+                        </ul>
+
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Đăng xuất"></td>

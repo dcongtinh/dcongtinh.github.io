@@ -16,6 +16,14 @@ if (isset($_SESSION['tendangnhap'])) {
 </head>
 
 <body>
+    <p class="thanhcong">
+        <?php
+        if (isset($_SESSION['thanhcong'])) {
+            echo $_SESSION['thanhcong'];
+            unset($_SESSION['thanhcong']);
+        }
+        ?>
+    </p>
     <div class="container">
         <form action="login.php" method="POST">
             <table>

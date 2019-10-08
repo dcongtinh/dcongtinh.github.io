@@ -1,0 +1,49 @@
+.container {
+    border: 1px solid red;
+    width: 600px;
+    margin: 0 auto;
+    background-color: silver;
+}
+.container table {
+    width: 100%;
+    margin: 4px;
+    border-collapse: collapse;
+}
+.container table th {
+    background-color: darkgray;
+}
+.container table td img {
+    width: 16px;
+    height: 16px;
+}
+.container .hello {
+    border-bottom: 1px dotted red;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    color: red;
+    position: relative;
+}
+.container form {
+    padding: 16px;
+}
+.container .signout{
+    margin-top: 20px;
+    text-align: center;
+}
+.container .add {
+    display: inline;
+    position: absolute;
+    right: 8px;
+    color: black;
+}
+.container .add a {
+    text-decoration: none;
+}
+.thanhcong {
+    font-size: 24px;
+    color: green;
+    font-style: italic;
+    height: 18px;
+    text-align: center;
+}

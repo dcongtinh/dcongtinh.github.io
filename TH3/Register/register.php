@@ -4,7 +4,6 @@ include '../../database.php';
 
 $error_cnt = 0;
 $tendangnhap = $_POST['tendangnhap'];
-$_SESSION['tendangnhap'] = $tendangnhap;
 if (!$tendangnhap) {
     ++$error_cnt;
     $_SESSION['error_tendangnhap'] = 'Vui lòng nhập Tên đăng nhập!';
@@ -37,9 +36,7 @@ if (isset($_FILES['hinhanh'])) {
     // }
 }
 $gioitinh = $_POST['gioitinh'];
-$_SESSION['gioitinh'] = $gioitinh;
 $nghenghiep = $_POST['nghenghiep'];
-$_SESSION['nghenghiep'] = $nghenghiep;
 
 $sothich_array = $_POST['sothich'];
 if (isset($sothich_array)) {
@@ -47,9 +44,14 @@ if (isset($sothich_array)) {
     foreach ($sothich_array as $key => $value) {
         if ($key) $sothich .= ', ' . $value;
     }
-    $_SESSION['sothich'] = $sothich;
 }
 
+$conn = db_connect();
+$sql = "SELECT * FROM thanhvien where tendangnhap='$tendangnhap'";
+if ($conn->query($sql)->num_rows == 1) {
+    ++$error_cnt;
+    $_SESSION['error_tendangnhap'] = 'Tên tài khoản đã tồn tại';
+}
 if ($error_cnt) {
     header('Location: ./index.php');
     exit();
@@ -72,8 +74,8 @@ if ($uploadOk == 0) {
         }
     }
     if ($conn->query($sql) === TRUE) {
-        // echo "New record created successfully";
-        header('Location: ../Profile');
+        $_SESSION['thanhcong'] = "Chúc mừng bạn đăng ký tài khoản thành công!";
+        header('Location: ../Login');
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
