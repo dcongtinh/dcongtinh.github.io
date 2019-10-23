@@ -17,11 +17,11 @@ if (!isset($_SESSION['tendangnhap'])) {
 
 <body>
     <div class="profile">
-        <p class="hello">Chào bạn, <?php echo $_SESSION['tendangnhap'] ?>!</p>
+        <p class="hello">Chào bạn, <b><?php echo $_SESSION['tendangnhap'] ?></b>!</p>
         <form method="POST" action="signout.php">
             <table>
                 <tr>
-                    <td rowspan="6"><img src="../../img/avatar.jpg" alt="" width="150" height="150"></td>
+                    <td rowspan="6"><img src=<?php echo $_SESSION['hinhanh'] ?> alt="" width="150" height="150"></td>
                     <td>Nickname: <?php echo $_SESSION['tendangnhap'] ?></td>
                 </tr>
                 <tr>

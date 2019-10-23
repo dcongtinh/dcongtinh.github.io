@@ -1,9 +1,6 @@
 table {
     width: 100%;
 }
-td {
-    padding-left: 50px;
-}
 th {
     vertical-align: baseline;
     text-align: right;

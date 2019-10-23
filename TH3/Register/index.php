@@ -6,8 +6,8 @@ if (isset($_SESSION['tendangnhap'])) {
 
 function set_error($param)
 {
-    $error = $_SESSION['error_' . $param];
     if (isset($_SESSION['error_' . $param])) {
+        $error = $_SESSION['error_' . $param];
         echo "<p class='error'>$error</p>";
         unset($_SESSION['error_' . $param]);
         return;
@@ -38,28 +38,28 @@ function set_error($param)
                 <tr>
                     <th>Tên đăng nhập</th>
                     <td>
-                        <input type="text" name="tendangnhap" />
+                        <input type="text" name="tendangnhap" required />
                         <?php set_error('tendangnhap') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Mật khẩu</th>
                     <td>
-                        <input type="password" name="matkhau" />
+                        <input type="password" name="matkhau" required />
                         <?php set_error('matkhau') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Gõ lại mật khẩu</th>
                     <td>
-                        <input type="password" name="matkhau2" />
+                        <input type="password" name="matkhau2" required />
                         <?php set_error('matkhau2') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Hình đại diện</th>
                     <td>
-                        <input id="file" type="file" name="hinhanh" />
+                        <input id="file" type="file" name="hinhanh" required />
                     </td>
                 </tr>
                 <tr>
@@ -73,7 +73,7 @@ function set_error($param)
                 <tr>
                     <th>Nghề nghiệp</th>
                     <td>
-                        <select name="nghenghiep">
+                        <select name="nghenghiep" value="Học sinh">
                             <option value="Học sinh">Học sinh</option>
                             <option value="Sinh viên">Sinh viên</option>
                             <option value="Giáo viên">Giáo viên</option>

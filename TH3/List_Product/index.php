@@ -55,12 +55,12 @@ if (!$result) {
 
                     ?>
                     <tr>
-                        <td><?php echo ++$i; ?></td>
+                        <td class="center"><?php echo ++$i; ?></td>
                         <td><?php echo $row['tensp']; ?></td>
-                        <td><?php echo $row['giasp']; ?></td>
-                        <td><a href="../Product?idsp=<?php echo $row['idsp'] ?>">Xem</a></td>
-                        <td><a href="#"><img src="../../assets/icon/edit.png" alt="edit_icon"></a></td>
-                        <td><a href="delete.php?idsp=<?php echo $row['idsp'] ?>"><img src="../../assets/icon/delete.png" alt="delete_icon"></a></td>
+                        <td><?php echo number_format($row['giasp']); ?></td>
+                        <td class="center"><a href="../Product?idsp=<?php echo $row['idsp'] ?>">Xem</a></td>
+                        <td class="center"><a href="#"><img src="../../assets/icon/edit.png" alt="edit_icon"></a></td>
+                        <td class="center"><a href="delete.php?idsp=<?php echo $row['idsp'] ?>"><img src="../../assets/icon/delete.png" alt="delete_icon"></a></td>
                     </tr>
                 <?php
                 }

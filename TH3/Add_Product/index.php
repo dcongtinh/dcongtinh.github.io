@@ -6,8 +6,8 @@ if (!isset($_SESSION['tendangnhap'])) {
 
 function set_error($param)
 {
-    $error = $_SESSION['error_' . $param];
     if (isset($_SESSION['error_' . $param])) {
+        $error = $_SESSION['error_' . $param];
         echo "<p class='error'>$error</p>";
         unset($_SESSION['error_' . $param]);
         return;
@@ -38,7 +38,7 @@ function set_error($param)
                 <tr>
                     <th>Tên sản phẩm</th>
                     <td>
-                        <input type="text" name="tensp" />
+                        <input type="text" name="tensp" required/>
                         <?php set_error('tensp') ?>
                     </td>
                 </tr>
@@ -52,14 +52,14 @@ function set_error($param)
                 <tr>
                     <th>Giá sản phẩm</th>
                     <td>
-                        <input type="number" name="giasp" /> (VND)
+                        <input type="number" name="giasp" required/> (VND)
                         <?php set_error('giasp') ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Hình đại diện</th>
                     <td>
-                        <input id="file" type="file" name="hinhanhsp" />
+                        <input id="file" type="file" name="hinhanhsp" required/>
                     </td>
                 </tr>
                 <tr>

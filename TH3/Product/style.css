@@ -3,10 +3,8 @@ table {
     width: 100%;
     background-color: silver;
 }
-td {
-    padding-left: 50px;
-}
 th {
+    width: 170px;
     vertical-align: baseline;
     text-align: left;
 }
@@ -19,9 +17,6 @@ th {
 .container table {
     width: 100%;
     border-collapse: collapse;
-}
-.container table th {
-    /* text-align: right; */
 }
 .container table a img {
     width: 16px;

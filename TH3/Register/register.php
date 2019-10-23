@@ -25,15 +25,15 @@ $uploadOk = 1;
 $target_file = '';
 if (isset($_FILES['hinhanh'])) {
     $file = $_FILES['hinhanh'];
-    $target_dir = "/assets/avatar/";
-    // $target_file = $target_dir . basename($file["name"]);
+    $target_dir = "../../assets/avatar/";
+    $target_file = $target_dir . basename($file["name"]);
 
-    // $check = getimagesize($file["tmp_name"]);
-    // if ($check) $uploadOk = 1;
-    // else {
-    //     echo "File is not an image.";
-    //     $uploadOk = 0;
-    // }
+    $check = getimagesize($file["tmp_name"]);
+    if ($check) $uploadOk = 1;
+    else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
 }
 $gioitinh = $_POST['gioitinh'];
 $nghenghiep = $_POST['nghenghiep'];
@@ -66,13 +66,16 @@ if ($uploadOk == 0) {
     // if everything is ok, try to upload file
 } else {
     if ($file['name']) {
-        echo $file["tmp_name"];
-        if (move_uploaded_file($file["tmp_name"], "./" . $file['name'])) {
-            echo "<br>The file " . basename($file["name"]) . " has been uploaded.";
+        if (move_uploaded_file($file["tmp_name"], $target_file)) {
+            // echo "<br>The file " . basename($file["name"]) . " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
+            exit();
         }
     }
+    $sql = "INSERT INTO thanhvien (tendangnhap, matkhau, hinhanh, gioitinh, nghenghiep, sothich)
+    VALUES ('$tendangnhap', '" . md5($matkhau) . "', '$target_file', '$gioitinh', '$nghenghiep', '" . $sothich . "')";
+
     if ($conn->query($sql) === TRUE) {
         $_SESSION['thanhcong'] = "Chúc mừng bạn đăng ký tài khoản thành công!";
         header('Location: ../Login');
