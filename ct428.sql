@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 10, 2019 lúc 01:07 AM
+-- Thời gian đã tạo: Th10 24, 2019 lúc 01:40 PM
 -- Phiên bản máy phục vụ: 8.0.11
 -- Phiên bản PHP: 7.3.8
 
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `sanpham` (
   `idsp` int(11) NOT NULL,
-  `tensp` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `chitietsp` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `tensp` varchar(255) NOT NULL,
+  `chitietsp` varchar(255) NOT NULL,
   `giasp` int(11) NOT NULL,
-  `hinhanhsp` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `hinhanhsp` varchar(255) NOT NULL,
   `idtv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,7 +42,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`idsp`, `tensp`, `chitietsp`, `giasp`, `hinhanhsp`, `idtv`) VALUES
-(7, 'iphone11promax', 'description', 40000000, '', 7);
+(7, 'iphone11promax', 'description', 40000000, '../../assets/product/ip11promax.jpg', 7),
+(11, 'Asus', 'Asus for Asus', 16000000, '../../assets/product/asus.jpg', 12),
+(12, 'HP', 'HP for HP', 14000000, '../../assets/product/hp.jpg', 12),
+(13, 'Macbook Pro 2020', 'Thông số kỹ thuật\r\n* Bộ vi xử lý: 5.0GHz 12‑core 9th‑generation Intel Core i9 processor,\r\n* Bộ nhớ: 32GB 3600MHz DDR4 memory\r\n* Ổ lưu trữ: 2TB SSD storage\r\n* Màn hình: 15.4-inch Retina display with True Tone, Touch Bar, Touch ID.', 100000000, '../../assets/product/MBP_2019.jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -55,9 +58,9 @@ CREATE TABLE `thanhvien` (
   `tendangnhap` varchar(255) NOT NULL,
   `matkhau` varchar(255) NOT NULL,
   `hinhanh` varchar(255) NOT NULL,
-  `gioitinh` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nghenghiep` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `sothich` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `gioitinh` varchar(5) NOT NULL,
+  `nghenghiep` varchar(255) NOT NULL,
+  `sothich` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -65,10 +68,17 @@ CREATE TABLE `thanhvien` (
 --
 
 INSERT INTO `thanhvien` (`id`, `tendangnhap`, `matkhau`, `hinhanh`, `gioitinh`, `nghenghiep`, `sothich`) VALUES
-(7, 'dcongtinh', 'c4ca4238a0b923820dcc509a6f75849b', '', 'Nam', 'Sinh viên', 'Du lịch, Âm nhạc'),
-(8, 'pnmthao', 'c4ca4238a0b923820dcc509a6f75849b', '', 'Nữ', 'Giáo viên', 'The thao, Du lịch, Âm nhạc, Thời trang'),
-(9, 'test', 'c4ca4238a0b923820dcc509a6f75849b', '', 'Nam', 'Học sinh', 'Thể thao'),
-(11, 'test1', 'c4ca4238a0b923820dcc509a6f75849b', '', 'Nữ', 'Sinh viên', 'Thể thao, Du lịch, Âm nhạc, Thời trang');
+(7, 'dcongtinh', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/corgi.png', 'Nam', 'Sinh viên', 'Du lịch, Âm nhạc'),
+(8, 'pnmthao', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/corgi.png', 'Nữ', 'Giáo viên', 'The thao, Du lịch, Âm nhạc, Thời trang'),
+(9, 'test', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/corgi.png', 'Nam', 'Học sinh', 'Thể thao'),
+(11, 'test1', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/corgi.png', 'Nữ', 'Sinh viên', 'Thể thao, Du lịch, Âm nhạc, Thời trang'),
+(12, '_test_', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/avatar.PNG', 'Nam', 'Sinh viên', 'Thể thao, Du lịch, Âm nhạc'),
+(13, 'a', '0cc175b9c0f1b6a831c399e269772661', '../../assets/avatar/acer.jpg', 'Nữ', 'Giáo viên', 'Du lịch, Âm nhạc'),
+(14, 'test_2', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/poster.png', 'Nam', 'Học sinh', ''),
+(15, 'test2', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/IMG_5651.JPG', 'Nam', 'Học sinh', ''),
+(16, 'test3', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/poster.png', 'Nam', 'Học sinh', ''),
+(17, 'test4', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/IMG_5651.JPG', 'Nam', 'Học sinh', ''),
+(18, 'test5', 'c4ca4238a0b923820dcc509a6f75849b', '../../assets/avatar/IMG_5651.JPG', 'Nữ', 'Sinh viên', 'Du lịch');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -95,13 +105,13 @@ ALTER TABLE `thanhvien`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `idsp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idsp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `thanhvien`
 --
 ALTER TABLE `thanhvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
