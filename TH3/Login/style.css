@@ -12,7 +12,7 @@ th {
     border: 1px solid;
     width: 300px;
 }
-.error {
+#error {
     font-size: 14px;
     color: red;
     font-style: italic;

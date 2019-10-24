@@ -25,7 +25,7 @@ if (isset($_SESSION['tendangnhap'])) {
         ?>
     </p>
     <div class="container">
-        <form action="login.php" method="POST">
+        <form action="login.php" name="fDangnhap" method="POST" onsubmit="return validateForm()">
             <table>
                 <tr>
                     <th>Tên đăng nhập</th>
@@ -52,7 +52,7 @@ if (isset($_SESSION['tendangnhap'])) {
                     </td>
                 </tr>
             </table>
-            <p class="error">
+            <p id="error">
                 <?php
                 if (isset($_SESSION['error'])) {
                     echo "* " . $_SESSION['error'];
@@ -62,6 +62,17 @@ if (isset($_SESSION['tendangnhap'])) {
             </p>
         </form>
     </div>
+    <script>
+        function validateForm() {
+            var form = document.forms["fDangnhap"];
+            if (!form["tendangnhap"].value || !form["matkhau"].value) {
+                document.getElementById('error').innerHTML = "* Vui lòng nhập đầy đủ thông tin"
+                return false;
+            }
+            document.getElementById('error').innerHTML = ""
+            return true;
+        }
+    </script>
 </body>
 
 </html>
