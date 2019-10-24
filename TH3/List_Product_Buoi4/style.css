@@ -1,13 +1,8 @@
-table {
-    padding: 8px;
-    width: 100%;
-    background-color: silver;
+.container .icon img {
+    width: 16px;
+    height: 16px;
 }
-th {
-    width: 170px;
-    vertical-align: baseline;
-    text-align: left;
-}
+
 .container {
     border: 1px solid red;
     width: 600px;
@@ -16,9 +11,13 @@ th {
 }
 .container table {
     width: 100%;
+    margin: 4px;
     border-collapse: collapse;
 }
-.container table a img {
+.container table th {
+    background-color: darkgray;
+}
+.container table td img {
     width: 16px;
     height: 16px;
 }
@@ -32,6 +31,7 @@ th {
 }
 .container form {
     padding: 16px;
+    max-width: 300px;
 }
 .container .signout{
     margin-top: 20px;
@@ -53,20 +53,34 @@ th {
     height: 18px;
     text-align: center;
 }
-.error {
-    font-size: 14px;
-    color: red;
-    font-style: italic;
-    margin: 2px;
-    height: 18px;
-}
 .center {
     text-align: center;
 }
 
+.container .body, .container .navigation,.container .select, .container .footer{
+    display: flex;
+    justify-content: center;
+}
+.container .select {
+    margin: 2px 0;
+}
+#tensp {
+    font-size: 18px;
+    font-weight: bold;
+}
+#giasp {
+    color: red;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+#chitietsp {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
 textarea {
-    width: 228px;
+    width: 268px;
     resize: none;
     padding: 16px;
-    font-size: 12px;
 }

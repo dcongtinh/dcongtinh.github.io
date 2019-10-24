@@ -70,7 +70,7 @@ function set_error($param)
                     <tr>
                         <th>Chi tiết sản phẩm</th>
                         <td>
-                            <textarea name="chitietsp" cols="40" rows="5"><?php echo $data['chitietsp']; ?></textarea>
+                            <textarea rows="8" name="chitietsp" style="width: 268px"><?php echo $data['chitietsp']; ?></textarea>
                             <?php set_error('matkhau') ?>
                         </td>
                     </tr>
@@ -85,7 +85,7 @@ function set_error($param)
                         <th>Hình đại diện</th>
                         <td>
                             <label for="hinhanhsp" style="cursor: pointer;">
-                                <img src="<?php echo $data['hinhanhsp']; ?>" width="150" height="150" />
+                                <img src="<?php echo $data['hinhanhsp']; ?>" width="300" height="300" />
                             </label>
                             <input type="hidden" name="hinhanhsp" value="<?php echo $data['hinhanhsp']; ?>" />
                             <input id="hinhanhsp" type="file" name="hinhanhsp" value="<?php echo $data['hinhanhsp']; ?>" />
@@ -114,7 +114,7 @@ function set_error($param)
             <div style="padding: 16px;">
                 <table>
                     <tr>
-                        <th colspan="2" class="center"><img src=<?php echo $data['hinhanhsp']; ?> alt="" width="150" height="150"></th>
+                        <th colspan="2" class="center"><img src=<?php echo $data['hinhanhsp']; ?> alt="" width="300" height="300"></th>
                     </tr>
                     <tr>
                         <th>Tên sản phẩm</th>
@@ -122,7 +122,7 @@ function set_error($param)
                     </tr>
                     <tr>
                         <th>Mô tả sản phẩm</th>
-                        <td><?php echo $data['chitietsp'] ?></td>
+                        <td><textarea readonly rows="8"><?php echo $data['chitietsp'] ?></textarea></td>
                     </tr>
                     <tr>
                         <th>Giá sản phẩm</th>

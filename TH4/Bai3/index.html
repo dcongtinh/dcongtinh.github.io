@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lập trình web (CT428)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- <link
+            rel="stylesheet"
+            type="text/css"
+            href="style.css"
+            media="screen"
+        /> -->
+        <script>
+            var TIMER_LENGTH = 2000
+            var COMPANYS = []
+            COMPANYS[0] = {
+                src: '../../assets/hinh san pham/hp.jpg',
+                href: 'http://www.hp.com'
+            }
+            COMPANYS[1] = {
+                src: '../../assets/hinh san pham/dell.jpg',
+                href: 'http://www.dell.com'
+            }
+            COMPANYS[2] = {
+                src: '../../assets/hinh san pham/acer.jpg',
+                href: 'http://www.acer.com.vn'
+            }
+            COMPANYS[3] = {
+                src: '../../assets/hinh san pham/asus.jpg',
+                href: 'http://www.asus.com'
+            }
+            var timer = setInterval('myTimer()', TIMER_LENGTH),
+                index = -1
+            function myTimer() {
+                var total = COMPANYS.length
+                index = (index + 1 + total) % total
+                document.getElementById('link').href = COMPANYS[index].href
+                document.getElementsByName('laptopImg')[0].src =
+                    COMPANYS[index].src
+            }
+            function pauseTimer() {
+                clearInterval(timer)
+            }
+            function activateTimer() {
+                timer = setInterval('myTimer()', TIMER_LENGTH)
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="title">
+                <h1>Bài 3 - Buổi 4</h1>
+            </div>
+            <!--end div title-->
+            <div id="menu">
+                <!-- chèn menu của sinh viên vào-->
+            </div>
+            <!--end div menu-->
+            <div id="content">
+                <!--Nội dung trang web-->
+                <h1>Quảng cáo</h1>
+
+                <a href="http://www.hp.com" target="_blank" id="link"
+                    ><img
+                        name="laptopImg"
+                        src="../../assets/hinh san pham/hp.jpg"
+                        height="300"
+                        width="300"
+                        onmouseover="pauseTimer()"
+                        onmouseout="activateTimer()"
+                /></a>
+
+                <p>
+                    Yêu cầu:<br />
+                    Có 4 hình ảnh của 4 công ty muốn quảng cáo đính kèm. Đầu
+                    tiên hiển thị một hình, cứ 2 giây thì thay hình ảnh khác,
+                    xoay vòng giữa 4 hình ảnh đã cho.<br />
+                    Khi người dùng rê chuột lên hình nào thì hình đó dừng lại
+                    không thay đổi để người dùng đọc thông tin về quảng cáo đó,
+                    khi nào người dùng rê chuột khỏi thì 2 giây sau mới cho hiển
+                    thị hình tiếp theo.<br />
+                    Khi người dùng click vào hình nào thì liên kết đến website
+                    của hình đó ở cửa sổ mới.
+                </p>
+            </div>
+            <!--end div content-->
+            <div id="footer">
+                <p>
+                    Họ tên SV: Đào Công Tính<br />
+                    Email: tinhb1709632@student.ctu.edu.vn
+                </p>
+            </div>
+            <!--end div footer-->
+        </div>
+        <!--end div wrap-->
+    </body>
+</html>

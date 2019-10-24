@@ -24,40 +24,6 @@ function set_error($param)
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
     <title>Đăng ký</title>
-    <script>
-        function handle_tendangnhap(element) {
-            var val = element.value;
-            var pError = document.getElementById('error_tendangnhap').innerHTML;
-            pError = '';
-            if (!val) pError = "* Bat buoc"
-            else {
-                if (val.length < 6 || val.length > 15) {
-                    document.getElementById('error_tendangnhap').innerHTML = "* Do dai tu 6 den 15 ki tu"
-                    return;
-                }
-                var regex = /^[a-zA-Z][a-zA-Z0-9]{5,14}$/
-                if (!regex.test(val)) {
-                    document.getElementById('error_tendangnhap').innerHTML = "* Ten dang nhap ko hop le"
-                }
-            }
-        }
-
-        function handle_matkhau(element) {
-            document.getElementById('error_matkhau').innerHTML
-        }
-
-        function handle_matkhau2(element) {
-            var form = document.forms["fDangky"];
-            if (form['matkhau'].value != form['matkhau2'].value) {
-                document.getElementById('error_matkhau').innerHTML = "Mat khau khong khop";
-                return;
-            }
-        }
-
-        function handle_focus(id) {
-            document.getElementById(id).innerHTML = ''
-        }
-    </script>
 </head>
 
 <body>
@@ -66,12 +32,12 @@ function set_error($param)
         <p>
             Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản mới
         </p>
-        <form class="form-wrapper" enctype="multipart/form-data" method="POST" action="register.php" name="fDangky">
+        <form class="form-wrapper" enctype="multipart/form-data" method="POST" action="register.php" name="fDangky" onsubmit="return validateForm()">
             <table>
                 <tr>
                     <th>Tên đăng nhập</th>
                     <td>
-                        <input type="text" name="tendangnhap" onblur="handle_tendangnhap(this)" onfocus="handle_focus('error_tendangnhap')" />
+                        <input type="text" name="tendangnhap" onblur="handle_tendangnhap()" onfocus="handle_focus('error_tendangnhap')" />
                         <p id="error_tendangnhap" class='error'>
                             <?php set_error('tendangnhap') ?>
                         </p>
@@ -80,8 +46,8 @@ function set_error($param)
                 <tr>
                     <th>Mật khẩu</th>
                     <td>
-                        <input type="password" name="matkhau" onblur="handle_matkhau(this)" onfocus="handle_focus('error_matkhau')" />
-                        <p class='error_matkhau'>
+                        <input type="password" name="matkhau" onblur="handle_matkhau()" onfocus="handle_focus('error_matkhau')" />
+                        <p id='error_matkhau' class='error'>
                             <?php set_error('matkhau') ?>
                         </p>
                     </td>
@@ -89,8 +55,8 @@ function set_error($param)
                 <tr>
                     <th>Gõ lại mật khẩu</th>
                     <td>
-                        <input type="password" name="matkhau2" onblur="handle_matkhau2(this)" onfocus="handle_focus('error_matkhau2')" />
-                        <p class='error_matkhau2'>
+                        <input type="password" name="matkhau2" onblur="handle_matkhau2()" onfocus="handle_focus('error_matkhau2')" />
+                        <p id='error_matkhau2' class='error'>
                             <?php set_error('matkhau2') ?>
                         </p>
                     </td>
@@ -98,7 +64,8 @@ function set_error($param)
                 <tr>
                     <th>Hình đại diện</th>
                     <td>
-                        <input id="file" type="file" name="hinhanh" required />
+                        <input id="file" type="file" name="hinhanh" accept="image/*" onblur="handle_hinhanh()" onfocus="handle_focus('error_hinhanh')"/>
+                        <p id="error_hinhanh" class='error'></p>
                     </td>
                 </tr>
                 <tr>
@@ -132,11 +99,12 @@ function set_error($param)
                 <tr>
                     <th></th>
                     <td>
-                        <input type="submit" value="Đăng ký" />
+                        <input type="submit" value="Đăng ký"/>
                         <input type="reset" value="Làm lại" />
                     </td>
                 </tr>
             </table>
+            <p class="error" id="error_global"></p>
         </form>
         <p class="error">
             <?php
@@ -147,6 +115,7 @@ function set_error($param)
             ?>
         </p>
     </div>
+    <script src="register.js"></script>
 </body>
 
 </html>
