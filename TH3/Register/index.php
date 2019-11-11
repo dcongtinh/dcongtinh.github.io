@@ -99,7 +99,7 @@ function set_error($param)
                 <tr>
                     <th></th>
                     <td>
-                        <input type="submit" value="Đăng ký"/>
+                        <input id="btnSubmit" type="submit" value="Đăng ký" disabled />
                         <input type="reset" value="Làm lại" />
                     </td>
                 </tr>

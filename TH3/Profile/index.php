@@ -38,6 +38,7 @@ if (!isset($_SESSION['tendangnhap'])) {
                         <ul>
                             <li><a href="../List_Product">Danh sách sản phẩm</a></li>
                             <li><a href="../List_Product_Buoi4">Buổi 4 - Bài 4</a></li>
+                            <li><a href="../List_Product_Buoi5">Buổi 5 - Bài 2</a></li>
                             <li><a href="../Add_Product">Thêm sản phẩm</a></li>
                         </ul>
 

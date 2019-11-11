@@ -1,0 +1,134 @@
+.container {
+    border: 1px solid red;
+    width: 600px;
+    margin: 0 auto;
+    background-color: silver;
+}
+
+.container table {
+    width: 100%;
+    margin: 4px;
+    border-collapse: collapse;
+}
+
+.container table th {
+    background-color: darkgray;
+}
+
+.container table td img {
+    width: 16px;
+    height: 16px;
+}
+
+.container .hello {
+    border-bottom: 1px dotted red;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    color: red;
+    position: relative;
+}
+
+.container form {
+    padding: 16px;
+}
+
+.container .signout {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container .add {
+    display: inline;
+    position: absolute;
+    right: 8px;
+    color: black;
+}
+
+.container .add a {
+    text-decoration: none;
+}
+
+.thanhcong {
+    font-size: 24px;
+    color: green;
+    font-style: italic;
+    height: 18px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+#show {
+    text-align: center;
+    margin-top: 16px;
+}
+
+
+/* #show img {
+    width: 300px;
+    height: 300px;
+} */
+
+.tooltiptext img {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+#show_img {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    /* background-color: black; */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    /* top: 100%; */
+    left: 62%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+textarea {
+    width: 228px;
+    resize: none;
+    padding: 16px;
+    font-size: 12px;
+}
+
+#show table th {
+    background-color: silver;
+}
+#data-input {
+    margin-bottom: 8px;
+    margin-left: 3px;
+    width: 150px;
+}
