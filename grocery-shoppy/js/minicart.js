@@ -3330,13 +3330,16 @@
                                     target.tagName
                                 )
                             ) {
-                                while (target.nodeType === 1) {
-                                    if (target === this.el) {
-                                        return
-                                    }
+                                //Can remove try catch if use form input
+                                try {
+                                    while (target.nodeType === 1) {
+                                        if (target === this.el) {
+                                            return
+                                        }
 
-                                    target = target.parentNode
-                                }
+                                        target = target.parentNode
+                                    }
+                                } catch (err) {}
 
                                 this.hide()
                             }

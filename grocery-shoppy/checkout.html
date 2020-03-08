@@ -809,9 +809,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<tr>
 								<th>SL No.</th>
 								<th>Product</th>
-								<th>Quality</th>
 								<th>Product Name</th>
-
+								<th>Quality</th>
+								<th>Discount</th>
+								<th>Unit Price</th>
 								<th>Price</th>
 								<th>Remove</th>
 							</tr>
@@ -1270,7 +1271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/minicart.js"></script>
 	<script>
 		paypalm.minicartk.render();
-		
+
 		function transformRaw(item, index) {
 			let {quantity, amount, discount_amount, item_name, item_image} = item._data
 			discount_amount = parseInt(discount_amount)
@@ -1282,86 +1283,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								"<img src='"+item_image+"' alt=' ' class='img-responsive'>"+
 							"</a>"+
 						"</td>"+
+						"<td class='invert'>"+item_name+"</td>"+
 						"<td class='invert'>"+
 							"<div class='quantity'>"+
 								"<div class='quantity-select'>"+
-									"<form action='#' method='post'>"+
-										"<input type='hidden' name='cmd' value='_cart' />"+
-										"<input type='hidden' name='add' value='-1' />"+
-										"<input type='hidden' name='business' value=' ' />"+
-										"<input type='hidden' name='item_image' value='"+item_image+"' />"+
-										"<input type='hidden' name='item_name' value='"+item_name+"' />"+
-										"<input type='hidden' name='amount' value='"+amount+"' />"+
-										"<input type='hidden' name='discount_amount' value='"+discount_amount+"' />"+
-										"<input type='hidden' name='currency_code' value='USD' />"+
-										"<input type='hidden' name='return' value=' ' />"+
-										"<input type='hidden' name='cancel_return' value=' ' />"+
-										"<input type='submit' name='submit' value='-' class='entry value-plus active' onclick='qtyChange("+index+", -1)'/>"+
-									"</form>"+
+									"<div class='entry value-minus' onclick='qtyChange("+index+", -1)'>&nbsp;</div>"+
 									"<div class='entry value'>"+
 										"<span class='item-quantity'>"+quantity+"</span>"+
 									"</div>"+
-									"<form action='#' method='post'>"+
-										"<input type='hidden' name='cmd' value='_cart' />"+
-										"<input type='hidden' name='add' value='1' />"+
-										"<input type='hidden' name='business' value=' ' />"+
-										"<input type='hidden' name='item_image' value='"+item_image+"' />"+
-										"<input type='hidden' name='item_name' value='"+item_name+"' />"+
-										"<input type='hidden' name='amount' value='"+amount+"' />"+
-										"<input type='hidden' name='discount_amount' value='"+discount_amount+"' />"+
-										"<input type='hidden' name='currency_code' value='USD' />"+
-										"<input type='hidden' name='return' value=' ' />"+
-										"<input type='hidden' name='cancel_return' value=' ' />"+
-										"<input type='submit' name='submit' value='+' class='entry value-plus active' onclick='qtyChange("+index+", 1)'/>"+
-									"</form>"+
+									"<div class='entry value-plus active' onclick='qtyChange("+index+", 1)'>&nbsp;</div>"+
 								"</div>"+
 							"</div>"+
 						"</td>"+
-						"<td class='invert'>"+item_name+"</td>"+
+						"<td class='invert item-discount'>$"+(discount_amount*quantity).toFixed(2)+"</td>"+
+						"<td class='invert item-amount'>$"+amount.toFixed(2)+"</td>"+
 						"<td class='invert item-price'>$"+((amount-discount_amount)*quantity).toFixed(2)+"</td>"+
 						"<td class='invert'>"+
 							"<div class='rem'>"+
 								"<span class='icon-close glyphicon glyphicon-remove-circle' aria-hidden='true' onclick='removeItem("+index+")'></span>"+
-								//"<div class='icon-close' onclick='removeItem("+index+")'/>"+
 							"</div>"+
 						"</td>"+
 					"</tr>"
 		}
+
 		function renderTable(){
 			let items = paypalm.minicartk.cart.items(), raws = ''
-			let total = paypalm.minicartk.cart.total()
+			var total, totalDiscount = 0, totalAmount = 0
 			if (items.length == 0){
 				alert('Your shopping cart is empty')
 				window.location.href = "./index.html"
 			}
 			items.forEach((item, index) => {
+				console.log(item)
+				let {quantity, amount, discount_amount} = item._data
+				totalDiscount += discount_amount * quantity
+				totalAmount += amount * quantity
 				raws += transformRaw(item, index)
 			})
-			
+			total = totalAmount - totalDiscount
 			raws += "<tr class='rem-total'>"+
 						"<td class='invert' colspan='4'>TOTAL</td>"+
+						"<td class='invert total total-discount'>$"+totalDiscount.toFixed(2)+"</td>"+
+						"<td class='invert total total-amount'>$"+totalAmount.toFixed(2)+"</td>"+
 						"<td class='invert total item-total'>$"+total.toFixed(2)+"</td>"+
 						"<td class='invert'></td>"+
 					"</tr>"
 			document.getElementById('body-checkout').innerHTML = raws
 			document.getElementById('product-qty').innerHTML = items.length + " Product(s)"
 		}
+
 		function qtyChange(index, value){
 			let items = paypalm.minicartk.cart.items()
 			let item  = items[index]._data
-			let {quantity, amount, discount_amount} = item
-			quantity += value
-			if (quantity >= 1) {
-				$('.rem'+index).find('.item-quantity').text(quantity)
-				$('.rem'+index).find('.item-price').text('$'+(amount-discount_amount)*quantity)
-				let total = $('.rem-total').find('.item-total').text()
-				total = parseFloat(total.substring(1))
-				$('.rem-total').find('.item-total').text('$'+(total + amount-discount_amount).toFixed(2))
-			}
+			let newData = Object.assign({}, item, 
+										{	"quantity": value, 
+											"currency_code": "USD", 
+											"business": "dcongtinh@gmail.com",
+										})
+			paypalm.minicartk.cart.add(newData)
 		}
+
 		function removeItem(index){
 			paypalm.minicartk.cart.remove(index)
-			renderTable()
 		}
 		paypalm.minicartk.cart.on('change', function (evt) {
 			renderTable()
@@ -1435,7 +1418,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/bootstrap.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
-
 </body>
 
 </html>
