@@ -1,0 +1,11 @@
+#body-checkout form input[name='submit'] {
+    color: black;
+}
+.quantity-select {
+    display: flex;
+    justify-content: center;
+}
+.ban-top .container {
+    display: flex;
+    align-items: center;
+}
