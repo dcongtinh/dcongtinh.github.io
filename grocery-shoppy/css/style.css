@@ -2469,7 +2469,7 @@ table.timetable_sub {
     margin: 0 auto;
 }
 .timetable_sub th {
-    background: #000;
+    background: #424242;
     color: #fff;
     font-size: 16px;
     border-right: 1px solid #ded2d2;
@@ -2495,7 +2495,7 @@ td.invert-image a img {
     position: relative;
 }
 .icon-close {
-    color: #e74c3c;
+    color: #f44336;
     cursor: pointer;
     font-size: 24px;
     -webkit-transition: color 0.2s ease-in-out;
@@ -2504,7 +2504,7 @@ td.invert-image a img {
     transition: color 0.2s ease-in-out;
 }
 .icon-check {
-    color: #2ecc71;
+    color: #4caf50;
     font-size: 24px !important;
 }
 /*-- quantity-starts --*/
@@ -2514,18 +2514,18 @@ td.invert-image a img {
     line-height: 24px;
     width: 40px;
     margin-right: 3px;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
-    position: relative;
-    font-size: 18px;
-    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
     border: 1px solid #b2b2b2;
     vertical-align: bottom;
 }
-.quantity-select .entry.value-minus:before,
+/* .quantity-select .entry.value-minus:before,
 .quantity-select .entry.value-plus:before {
     content: '';
     width: 13px;
@@ -2547,7 +2547,7 @@ td.invert-image a img {
     top: 50%;
     margin-top: -6.2px;
     position: absolute;
-}
+} */
 .value {
     cursor: default;
     width: 40px;
