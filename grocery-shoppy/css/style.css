@@ -601,7 +601,7 @@ button.w3view-cart {
     margin: 0.35em 0 0;
     background: url(../images/cart.png) no-repeat 116px 9px;
 }
-#PPminicartk form {
+#PPminicartk .form {
     width: 590px !important;
     padding: 10px 20px 40px !important;
     max-height: 450px !important;
@@ -618,6 +618,8 @@ button.w3view-cart {
 }
 #PPminicartk .minicartk-item {
     min-height: 60px !important;
+    display: flex;
+    align-items: baseline;
 }
 #PPminicartk .minicartk-attributes li {
     color: #999;
@@ -654,9 +656,17 @@ button.w3view-cart {
     left: 44% !important;
     z-index: 1999;
 }
-.minicartk-showing #PPminicartk form {
+.minicartk-showing #PPminicartk .form {
     overflow-x: hidden;
     overflow-y: auto;
+}
+.minicartk-showing #PPminicartk .form::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+.minicartk-showing #PPminicartk .form::-webkit-scrollbar-thumb {
+    background: #909090;
+    border-radius: 10px;
 }
 #PPminicartk .minicartk-footer {
     position: relative;
@@ -2495,7 +2505,7 @@ td.invert-image a img {
 }
 .icon-check {
     color: #2ecc71;
-    font-size: 20px;
+    font-size: 24px !important;
 }
 /*-- quantity-starts --*/
 .value-minus,
@@ -4651,7 +4661,7 @@ select.form-control.option-w3ls {
     .faq-w3agile .faq li {
         margin-top: 1em;
     }
-    #PPminicartk form {
+    #PPminicartk .form {
         width: 313px !important;
         padding: 10px 10px 40px !important;
     }
@@ -5090,7 +5100,7 @@ select.form-control.option-w3ls {
         font-size: 12px;
         line-height: 22px;
     }
-    #PPminicartk form {
+    #PPminicartk .form {
         width: 291px !important;
     }
     #PPminicartk ul {
