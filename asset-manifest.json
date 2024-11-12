@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.6834aeb3.css",
-    "main.js": "/static/js/main.ac10c3fb.js",
+    "main.css": "/static/css/main.161d4e15.css",
+    "main.js": "/static/js/main.ce1052af.js",
     "static/css/487.bb36206c.chunk.css": "/static/css/487.bb36206c.chunk.css",
     "static/js/487.7ae187c0.chunk.js": "/static/js/487.7ae187c0.chunk.js",
     "static/css/990.3ec6b0a0.chunk.css": "/static/css/990.3ec6b0a0.chunk.css",
-    "static/js/990.244ab4ac.chunk.js": "/static/js/990.244ab4ac.chunk.js",
+    "static/js/990.4d18d126.chunk.js": "/static/js/990.4d18d126.chunk.js",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/CTU_Logo.jpeg": "/static/media/CTU_Logo.a2897adb6cd198b42006.jpeg",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
@@ -25,15 +25,15 @@
     "static/media/nextuLogo.webp": "/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.6834aeb3.css.map": "/static/css/main.6834aeb3.css.map",
-    "main.ac10c3fb.js.map": "/static/js/main.ac10c3fb.js.map",
+    "main.161d4e15.css.map": "/static/css/main.161d4e15.css.map",
+    "main.ce1052af.js.map": "/static/js/main.ce1052af.js.map",
     "487.bb36206c.chunk.css.map": "/static/css/487.bb36206c.chunk.css.map",
     "487.7ae187c0.chunk.js.map": "/static/js/487.7ae187c0.chunk.js.map",
     "990.3ec6b0a0.chunk.css.map": "/static/css/990.3ec6b0a0.chunk.css.map",
-    "990.244ab4ac.chunk.js.map": "/static/js/990.244ab4ac.chunk.js.map"
+    "990.4d18d126.chunk.js.map": "/static/js/990.4d18d126.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6834aeb3.css",
-    "static/js/main.ac10c3fb.js"
+    "static/css/main.161d4e15.css",
+    "static/js/main.ce1052af.js"
   ]
 }
